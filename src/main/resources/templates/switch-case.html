@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Thymeleaf Iteration</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>Thymeleaf Switch Case Demo</h1>
+        <h4 th:utext = "${user.userName}"></h4>
+        <div th:switch ="${user.role}">
+            <p th:case = "'ADMIN'">User is an Administrator</p>
+            <p th:case = "'MANAGER'">User is a Manager</p>
+            <p th:case = "'USER'">User is a Guest</p>
+            <!-- * for default case-->
+            <p th:case = "*">User is some other thing</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
